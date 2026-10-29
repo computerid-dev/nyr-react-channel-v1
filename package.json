@@ -1,0 +1,12 @@
+{
+  "name": "nyr-react-channel-v1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web react channel WhatsApp (Neo Brutalism) - localhost Termux dan Vercel",
+  "scripts": {
+    "start": "node nyr-react-channel/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
