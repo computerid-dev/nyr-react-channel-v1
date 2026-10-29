@@ -1,0 +1,4 @@
+Environment variable untuk Vercel (opsional, project tetap jalan tanpa ini).
+
+Key: REACT_BASE_URL
+Value: https://satriareact.satriadeveloperz.workers.dev
