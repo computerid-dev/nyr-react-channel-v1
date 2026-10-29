@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYR React Channel</title>
+  <script src="guard.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <h1 class="brand">NYR REACT CHANNEL</h1>
+      <span class="badge">v1</span>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="card" aria-labelledby="form-title">
+      <h2 class="card-title bg-yellow" id="form-title">KIRIM REACT</h2>
+
+      <div class="card-body">
+        <p class="hint">
+          Tempel link postingan channel WhatsApp, pilih emoji, lalu atur jumlah react.
+        </p>
+
+        <div id="form-error" class="alert" role="alert" hidden></div>
+
+        <div class="field">
+          <label for="link">Link postingan channel</label>
+          <input id="link" type="url" inputmode="url" autocomplete="off"
+                 placeholder="https://whatsapp.com/channel/xxxx/123">
+        </div>
+
+        <div class="field">
+          <label for="emoji">Emoji (pisahkan dengan koma)</label>
+          <input id="emoji" type="text" autocomplete="off" value="&#128293;">
+          <div class="presets" id="presets" aria-label="Pilihan emoji cepat">
+            <button type="button" class="chip" data-emoji="&#128293;">&#128293;</button>
+            <button type="button" class="chip" data-emoji="&#10084;&#65039;">&#10084;&#65039;</button>
+            <button type="button" class="chip" data-emoji="&#128514;">&#128514;</button>
+            <button type="button" class="chip" data-emoji="&#128077;">&#128077;</button>
+            <button type="button" class="chip" data-emoji="&#128591;">&#128591;</button>
+            <button type="button" class="chip" data-emoji="&#128558;">&#128558;</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="total">Jumlah react</label>
+            <input id="total" type="number" min="1" max="500" step="1" value="10" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="delay">Jeda (ms)</label>
+            <input id="delay" type="number" min="0" max="10000" step="100" value="800" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="server">Server react</label>
+          <select id="server">
+            <option value="1">Server 1</option>
+            <option value="2">Server 2</option>
+            <option value="3" selected>Server 3</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="btn-start" class="btn bg-green" type="button">KIRIM REACT</button>
+          <button id="btn-stop" class="btn bg-red" type="button" disabled>STOP</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="status-title">
+      <h2 class="card-title bg-blue" id="status-title">STATUS</h2>
+
+      <div class="card-body">
+        <p id="status-text" class="status-text">Belum ada proses berjalan.</p>
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+             aria-valuenow="0" id="progress">
+          <div class="progress-bar" id="progress-bar"></div>
+          <span class="progress-label" id="progress-label">0%</span>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-label">TARGET</span>
+            <strong class="stat-value" id="stat-total">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">DIPROSES</span>
+            <strong class="stat-value" id="stat-done">0</strong>
+          </div>
+          <div class="stat bg-green">
+            <span class="stat-label">SUKSES</span>
+            <strong class="stat-value" id="stat-ok">0</strong>
+          </div>
+          <div class="stat bg-red">
+            <span class="stat-label">GAGAL</span>
+            <strong class="stat-value" id="stat-bad">0</strong>
+          </div>
+        </div>
+
+        <div class="log-head">
+          <h3 class="log-title">LOG</h3>
+          <button id="btn-clear" class="btn btn-small" type="button">BERSIHKAN</button>
+        </div>
+        <ul id="log" class="log" aria-live="polite">
+          <li class="log-item log-empty">Log akan muncul di sini.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>
+      Dibuat oleh nugroho &middot;
+      <a href="https://whatsapp.com/channel/0029VbCKJpb6LwHpbtC1mb3E" target="_blank" rel="noopener noreferrer">Saluran WhatsApp</a>
+    </p>
+    <p class="footer-note">
+      Pakai secukupnya. Server react pihak ketiga bisa membatasi atau menolak permintaan kapan saja.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
